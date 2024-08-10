@@ -3,6 +3,7 @@
 #include "pico/multicore.h"
 #include "hardware/vreg.h"
 #include "hardware/pwm.h"
+#include "hardware/clocks.h"
 #include "ZxSpectrumPrepareRgbScanline.h"
 #include "pzx_prepare_rgb444_scanline.h"
 #include "PicoCharRendererSt7789.h"
@@ -343,7 +344,7 @@ int main() {
 #ifdef PICOMPUTER_PICOZX_LCD  
   ZxRgb332RenderLoopInit();
 #else
-  set_sys_clock_khz(200000, true);
+   set_sys_clock_khz(200000, true);
 #endif
 
   //Initialise I/O
